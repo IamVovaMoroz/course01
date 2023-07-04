@@ -63,6 +63,21 @@
 //     fetch: [AsyncFunction: fetch]
 //   }
 
+/**@returns */
 
-const fs = require("fs")
+
+const fs = require("fs").promises
 const path = require("path")
+
+const readWriteExample = async()=>{
+try{
+// использовать не асинхронные версии, чтобы не ждать окончания действия
+// pathToFile files\books\books.txt    =>>>>>  path.join("files", "books", "books.txt") обьединил и получаем рез через черточку
+const pathToFile = path.join("files", "books", "books.txt")
+console.log('pathToFile', pathToFile)
+// fs.readFile()
+}catch(err){
+console.log('err', err)
+}
+}
+readWriteExample()
