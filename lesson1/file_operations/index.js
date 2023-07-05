@@ -110,7 +110,7 @@ const dirStat = await fs.lstat(dir)
 // делаем запись в json, добавили
 json.e = "ad new object "
 
-// перезапишим названия файла JSON
+// создали новый файл JSON
 await fs.writeFile("new JSON NOW", JSON.stringify(json))
 
 
