@@ -71,11 +71,51 @@ const path = require("path")
 
 const readWriteExample = async()=>{
 try{
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++== Read files
 // использовать не асинхронные версии, чтобы не ждать окончания действия
 // pathToFile files\books\books.txt    =>>>>>  path.join("files", "books", "books.txt") обьединил и получаем рез через черточку
 const pathToFile = path.join("files", "books", "books.txt")
-console.log('pathToFile', pathToFile)
-// fs.readFile()
+// console.log('pathToFile', pathToFile)
+
+
+// await fs.readFile(pathToFile)  ожидаем файл и в скобках какой читать
+const readResult = await fs.readFile(pathToFile)
+// console.log('pathToFile', pathToFile)
+// возвращается <Buffer закодированные данные, не в виде видео или музыки а Buffer
+// console.log('readResult', readResult)
+
+// после этого раскодируем его
+const txt = readResult.toString("utf8")
+// node index.js
+
+// директория где файлы
+const dir = "files"
+// console.log('dir', dir)
+
+const listDirContent = await fs.readdir(dir)
+// listDirContent [ 'books' ] директория показал / все папки что есть в данном месте. чтение содержимого директории с помощью функции fs.readdir, которая ожидает путь к директории и возвращает массив имен файлов и поддиректорий в указанной директории.
+// console.log('listDirContent', listDirContent)
+
+const dirStat = await fs.lstat(dir)
+// директория или файл узнать/ если файл - true, если нет - false
+// console.log('dirStat', dirStat.isDirectory())
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ read json
+
+// проложили путь через path.join
+ const patchToJson = path.join("files", "books", "simple.json")
+// прочитали файл через await fs.readFile
+ const jsonResult =  await fs.readFile(patchToJson)
+// распарсили JSON.parse
+ const json = JSON.parse(jsonResult)
+// делаем запись в json, добавили
+json.e = "ad new object "
+
+// перезапишим названия файла JSON
+await fs.writeFile("new JSON NOW", JSON.stringify(json))
+
+
+ console.log('json', json)
+//  console.log('jsonResult', jsonResult)
 }catch(err){
 console.log('err', err)
 }
