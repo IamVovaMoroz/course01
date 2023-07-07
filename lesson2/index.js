@@ -70,8 +70,16 @@ const isValid = num => {
 
 /**
  * Game results into the text file
+ * @params {string} msg
+ * @returns {Promise<void>} - it means returning promise with no data
  */
-
+const logger = async (msg) => {
+    try{
+await fs.appendFile(logFile, `${new Date().toLocaleString("UA")} :  ${msg}\n`)
+console.log(`Successfully saved game result to the file ${logFile}`)
+    }
+    catch(err){`Something went wrong ${err.message}` }
+}
 
 // main game process
 
@@ -98,6 +106,9 @@ const game = () => {
     console.log(
       `Congratulations! You guessed number in ${counter} step(s)`.green
     )
+// log game results
+logger(`Congratulations! You guessed number in ${counter} step(s)`)
+    // close interaction with user
     rl.close()
   })
 }
