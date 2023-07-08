@@ -32,6 +32,17 @@ const getById = async id => {
 const add = async(data) =>{
   // получили все книги
   const books = await getAll()
+
+// Проверяем, есть ли уже книга с указанным title и author, чтобы не добавлять повторно
+const existingBook = books.find((book) => book.title === data.title && book.author === data.author);
+if (existingBook) {
+  console.log('Книга уже существует');
+  return null;
+}
+
+
+
+
   // создаем новую. Добавляем id и данные которые приходят т.е. title , author - получаем обьект готовый
 const newBook = {
   // 

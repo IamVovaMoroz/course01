@@ -5,11 +5,6 @@
     "author": "Author 1"
   },
   {
-    "id": 3,
-    "title": "Book 3",
-    "author": "Author 3"
-  },
-  {
     "id": 4,
     "title": "Book 4",
     "author": "Author 4"
@@ -45,18 +40,8 @@
     "author": "Author 10"
   },
   {
-    "id": "Xwakxc3163KsY3v1YoKsg",
-    "title": "Book for you",
-    "author": "D. Moroz"
-  },
-  {
-    "id": "Rhyi7HV2jSpf_n_C9VWSC",
-    "title": "Book for you",
-    "author": "D. Moroz"
-  },
-  {
-    "id": "gmeCabSB0pJaKVFZnOzIz",
-    "title": "Book for you",
-    "author": "D. Moroz"
+    "id": "SONkwwhcMUgTusPouzQFw",
+    "title": "Book for you1",
+    "author": "D. Moroz1"
   }
 ]
