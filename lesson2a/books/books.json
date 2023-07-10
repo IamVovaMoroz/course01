@@ -1,13 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Book 1",
-    "author": "Author 1"
-  },
-  {
-    "id": 4,
-    "title": "Book 4",
-    "author": "Author 4"
+    "title": "New Book Title",
+    "author": "D. Moroz"
   },
   {
     "id": 5,
@@ -16,7 +11,7 @@
   },
   {
     "id": 6,
-    "title": "Book 6",
+    "title": "6",
     "author": "Author 6"
   },
   {
@@ -38,10 +33,5 @@
     "id": 10,
     "title": "Book 10",
     "author": "Author 10"
-  },
-  {
-    "id": "SONkwwhcMUgTusPouzQFw",
-    "title": "Book for you1",
-    "author": "D. Moroz1"
   }
 ]

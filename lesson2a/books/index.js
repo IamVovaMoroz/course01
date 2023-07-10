@@ -40,9 +40,6 @@ if (existingBook) {
   return null;
 }
 
-
-
-
   // создаем новую. Добавляем id и данные которые приходят т.е. title , author - получаем обьект готовый
 const newBook = {
   // 
