@@ -17,7 +17,7 @@ switch(action){
     case "read":
         // в перем allBooksзаписываем результат вызова функции, которая делает работу с json. 
         const allBooks = await books.getAll()
-https://www.youtube.com/watch?v=jOGaUSp_Aq8        // результат в консоль
+  // результат в консоль
         return console.table(allBooks)
 
 
