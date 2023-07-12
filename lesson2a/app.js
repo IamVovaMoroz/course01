@@ -70,7 +70,7 @@ invokeAction(options)
 // invokeAction({action: "updateById", id: 11, title : "New Book Title", author: "D. Moroz1"})
 
 // //  удалить книгу по id
-invokeAction({action: "deleteById", id : 4})
+invokeAction({action: "deleteById", id : 6})
 
 
 // ДЛЯ ТОГО ЧТОБЫ ОТПРАВЛЯТЬ КОМАНДЫ ЧЕРЕЗ КОМАНДНУЮ СТРОКУ 1 СПОСОБ

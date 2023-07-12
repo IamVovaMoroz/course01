@@ -9,16 +9,13 @@ const books = require('../express2/books')
 
 const app = express()
 
-
-
 // вызов cors 1 способ
 // const corsMiddleware = cors()
 // // все запросы пропускаем через corsMiddleware, если с другого домена - будет разрешать
 // app.use(corsMiddleware)
 
-// 2 способ сокращенный 
+// 2 способ сокращенный
 app.use(cors())
-
 
 // добавляем в middlware  функцию для любого запроса работает
 
@@ -40,7 +37,6 @@ app.use(async (request, response, next) => {
   next()
 })
 
-
 app.get('/products', (request, response) => {
   response.json([])
 })
@@ -52,7 +48,7 @@ app.get('/books', (request, response) => {
 // ставим в конце для отображения ошибки, что нет такой страницы в формате json. Когда пройдёт все app и ничего не нашёл, срабаытвает последний
 // если адрес есть, то остановится на соответсвующей, если нет то сработает {message: "Not found"}
 app.use((request, response) => {
-    response.status(404).json({ message: 'Not found' })
-  })
+  response.status(404).json({ message: 'Not found' })
+})
 
 app.listen(3001, console.log('server is running'))
