@@ -1,57 +1,51 @@
 // app.js
-const { program } = require('commander');
+const { program } = require('commander')
 // const books = require("../index")
 
 // меняем если переносим в папку
-const books = require("./books/index")
-
-
+const books = require('./index')
 
 // const yargs = require("yargs")
 // const {hideBin} = require("yargs/helpers")
 
+const invokeAction = async ({ action, id, title, author }) => {
+  switch (action) {
+    case 'read':
+      // в перем allBooksзаписываем результат вызова функции, которая делает работу с json.
+      const allBooks = await books.getAll()
+      // результат в консоль
+      return console.table(allBooks)
 
+    case 'getById':
+      //    вызывается getById(id) и передается наш id с вызова и сохраняется в  const oneBook
+      const oneBook = await books.getById(id)
 
-const invokeAction = async ({action, id, title, author}) => {
-switch(action){
-    case "read":
-        // в перем allBooksзаписываем результат вызова функции, которая делает работу с json. 
-        const allBooks = await books.getAll()
-  // результат в консоль
-        return console.table(allBooks)
+      return console.log(oneBook)
 
+    case 'add':
+      const newBook = await books.add({ title, author })
+      return console.log(newBook)
 
-        case "getById":
-    //    вызывается getById(id) и передается наш id с вызова и сохраняется в  const oneBook
-            const oneBook = await books.getById(id)
-       
-            return console.log(oneBook)
+    case 'updateById':
+      const updateBook = await books.updateById(id, { title, author })
 
-            case "add":  
-            const newBook = await books.add({title, author})
-            return console.log(newBook)
+      return console.log(updateBook)
 
-            case "updateById":
-                const updateBook = await books.updateById(id, {title, author})
+    case 'deleteById':
+      const deleteBook = await books.deleteById(id)
 
-                return console.log(updateBook)
+      return console.log(deleteBook)
 
-                case "deleteById":
-                    const deleteBook = await books.deleteById(id)
-    
-                    return console.log(deleteBook)
-
-                    default:
-                        return console.log("unknow action")
+    default:
+      return console.log('unknow action')
+  }
 }
-}
-
 
 program
-.option("--action, <type>")
-.option("--id, <type>")
-.option("--title, <type>")
-.option("--author, <type>")
+  .option('--action, <type>')
+  .option('--id, <type>')
+  .option('--title, <type>')
+  .option('--author, <type>')
 
 program.parse()
 const options = program.opts()
@@ -70,8 +64,7 @@ invokeAction(options)
 // invokeAction({action: "updateById", id: 11, title : "New Book Title", author: "D. Moroz1"})
 
 // //  удалить книгу по id
-invokeAction({action: "deleteById", id : 6})
-
+// invokeAction({ action: 'deleteById', id: 5 })
 
 // ДЛЯ ТОГО ЧТОБЫ ОТПРАВЛЯТЬ КОМАНДЫ ЧЕРЕЗ КОМАНДНУЮ СТРОКУ 1 СПОСОБ
 
@@ -89,18 +82,14 @@ invokeAction({action: "deleteById", id : 6})
 
 // }
 
-
 // получаем первые 2 элемента что ввел пользователь через командную строку
 // const  arr = hideBin(process.argv)
 // console.log(arr)
-
 
 // const {argv} = yargs(arr)
 // console.log(argv)
 // const { program } = require('commander');
 // const books = require("./books/index");
-
-
 
 // const invokeAction = async ({ action, id, title, author }) => {
 //   switch (action) {
@@ -137,7 +126,6 @@ invokeAction({action: "deleteById", id : 6})
 //   .option("--title <type>")
 //   .option("--author <type>")
 //   program.parse();
-
 
 // const options = program.opts();
 // invokeAction(options);
