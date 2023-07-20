@@ -37,7 +37,7 @@ const getUserById = async (req, res) => {
     const users = JSON.parse(data)
 
     // Поиск пользователя по ID
-    const user = users.find(item => item.id === id)
+    const user = users.find((item) => item.id === id)
 
     if (!user) {
       // Если пользователь не найден, отправляем ошибку 404
