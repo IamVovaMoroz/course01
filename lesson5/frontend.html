@@ -1,0 +1,83 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Тестовая страница</title>
+</head>
+<body>
+    <h1>Тестовая страница для проверки сервера</h1>
+    <button onclick="testServer()">Проверить сервер</button>
+
+    <script>
+        function testServer() {
+            const url = 'http://localhost:3000/books/cover.jpg'; // Замените 'your-endpoint' на конечную точку вашего сервера
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Сервер отвечает:', response.status, response.statusText);
+                    } else {
+                        console.error('Ошибка при запросе:', response.status, response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Тестовая страница</title>
+</head>
+<body>
+    <h1>Тестовая страница для проверки сервера</h1>
+    <button onclick="testServer()">Проверить сервер</button>
+    <br>
+    <img id="coverImage" src="" alt="Картинка обложки">
+
+    <script>
+        function testServer() {
+            const imageUrl = 'http://localhost:3000/books/cover.jpg'; // Замените на URL вашей картинки
+            const coverImage = document.getElementById('coverImage');
+            coverImage.src = imageUrl;
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестовая страница</title>
+</head>
+<body>
+    <h1>Тестовая страница для проверки сервера</h1>
+    <button onclick="testServer()">Проверить сервер</button>
+    <br>
+    <img id="coverImage" src="" alt="Картинка обложки">
+
+    <script>
+        function testServer() {
+            // http://localhost:3000/public/books/cover.jpg' находится картинка, но пишем путь без папки public
+            // или в браузере просто указать http://localhost:3000/books/cover.jpg
+            const imageUrl = 'http://localhost:3000/books/cover.jpg'; // Замените на URL вашей картинки
+            const coverImage = document.getElementById('coverImage');
+            
+            fetch(imageUrl)
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Сервер отвечает:', response.status, response.statusText);
+                        coverImage.src = imageUrl;
+                    } else {
+                        console.error('Ошибка при запросе:', response.status, response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+        }
+    </script>
+</body>
+</html>
