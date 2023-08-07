@@ -1,0 +1,16 @@
+{
+  "name": "lesson6-email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elasticemail/elasticemail-client": "^4.0.23",
+    "dotenv": "^16.3.1"
+  }
+}
