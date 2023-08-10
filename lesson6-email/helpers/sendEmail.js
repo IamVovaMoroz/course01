@@ -4,7 +4,7 @@ require('dotenv').config()
 const { UKR_NET_EMAIL, UKR_NET_PASSWORD } = process.env
 
 // создать транспорт и обьект настроек
-// npm i nodemailer  установить
+// npm i nodemailer  установить.
 
 const nodemailerConfig = {
     host: "smtp.ukr.net",
