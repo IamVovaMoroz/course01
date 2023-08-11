@@ -37,12 +37,14 @@ const transport = nodemailer.createTransport(nodemailerConfig)
 // создаем транспорт
 // const transport = nodemailer.createTransport(nodemailerConfig)
 
-// const email = {
-//     from: UKR_NET_EMAIL,
-//     to: "jasam64420@viperace.com",
-//     subjest: "Verify email",
-//     html: "<p>Verify email UKR</p>"
-// }
+const email = {
+    from: UKR_NET_EMAIL,
+    to: "yeweja5174@weishu8.com",
+    subjest: "Verify email",
+    html: "<p>Verify email UKR</p>"
+}
+
+
 
 
 transport.sendMail(email).then(()=>console.log("email send success")).catch(error => {console.log(error.message)})
