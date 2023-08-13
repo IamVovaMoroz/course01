@@ -59,6 +59,29 @@
     <img id="coverImage" src="" alt="Картинка обложки">
 
     <script>
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// для соединения ws.Server на фронтенде
+
+const ws = new WebSocket('ws://localhost:5000')
+
+// вешаем слушателя события на ws, срабатывает после усрпешного соединения
+
+ws.onopen = () => {
+    console.log('Success connect ')
+}
+
+// для получений сообщений с бекенда - onmessage
+
+ws.onmessage = e => {
+console.log(e.data)
+ 
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
         function testServer() {
             // http://localhost:3000/public/books/cover.jpg' находится картинка, но пишем путь без папки public
             // или в браузере просто указать http://localhost:3000/books/cover.jpg

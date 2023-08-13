@@ -12,6 +12,7 @@
   "dependencies": {
     "@elasticemail/elasticemail-client": "^4.0.23",
     "dotenv": "^16.3.1",
-    "nodemailer": "^6.9.4"
+    "nodemailer": "^6.9.4",
+    "ws": "^8.13.0"
   }
 }
