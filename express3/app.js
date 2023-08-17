@@ -27,11 +27,13 @@ app.use(cors())
 // })
 
 app.use(async (request, response, next) => {
+  // выполняется при любом запросе
+  console.log("сработал главный мидлваре")
   // метод и url берём с request
   // 2) для добавления времени когда был запрос
   const { method, url } = request
   const date = moment().format('DD-MM-YYYY_hh:mm:ss')
-  //    записываем информацию в файл и идёт дальше ext
+  // //    записываем информацию в файл и идёт дальше ext
   await fs.appendFile('./server.log', `\n${method} ${url} ${date}`)
 
   next()
@@ -51,4 +53,4 @@ app.use((request, response) => {
   response.status(404).json({ message: 'Not found' })
 })
 
-app.listen(3001, console.log('server is running'))
+app.listen(3000, console.log('server is running'))

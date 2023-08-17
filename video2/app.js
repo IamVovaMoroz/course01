@@ -32,8 +32,7 @@ default:
     return console.log("unknow action")
     }
 
-    
-}
+    }
 //1) при вызове передаем название действия
 // invokeAction({action: "read"})
 //2) поиск книги по ид
