@@ -1,5 +1,5 @@
 // books.js
-// создаём часть вед сервера , а не весь как в app
+// создаём часть вед сервера , а не весь как в app. Вынесли все маршруты в отдельный файл , касающиеся books/ Маршруты по которым будут происодить вызовы
 
 const express = require('express')
 
@@ -7,6 +7,7 @@ const express = require('express')
 const books = require('../../library')
 
 // const app = express() вместо этого
+// Делаем дополнительные маршруты к app, черз создание router
 const router = express.Router()
 
 // получение всех книг и меняет app на router
